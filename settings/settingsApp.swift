@@ -11,7 +11,21 @@ import SwiftUI
 struct settingsApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            NavigationStack {
+                ContentView()
+                    .toolbar {
+                        ToolbarItem {
+                            Button("clear") {
+                            }
+                        }
+                        ToolbarItem(placement: .navigationBarLeading) {
+                            NavigationLink(destination: SettingsView()) {
+                                Text("settings")
+                            }
+                        }
+                    }
+            }
         }
     }
 }
+
